@@ -1,5 +1,11 @@
 <!-- SPDX-License-Identifier: MPL-2.0 -->
 
+> **Datamora fork** — this repository is a fork of OSKey with Datamora branding
+> (UI strings, USB/BT names, splash logo), the Datamora terminal theme, and
+> bug/performance fixes for the ESP32-32E 2.8" ST7789 board (touch IRQ pin,
+> main stack size, LVGL buffering). Parent project:
+> [butterfly-community/oskey-firmware](https://github.com/butterfly-community/oskey-firmware).
+
 [中文点这里](./README_zh.md)
 
 ## What is OSKey?

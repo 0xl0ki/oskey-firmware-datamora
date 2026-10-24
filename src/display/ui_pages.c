@@ -40,7 +40,7 @@ static bool valid_pin(const char *pin)
 static const struct ui_input_config input_pages[] = {
 	[UI_PAGE_LOCKED] =
 		{
-			.title = "Unlock OSKey",
+			.title = "Unlock datamora",
 			.hint = "Enter the PIN for this wallet",
 			.placeholder = "Enter PIN",
 			.action = "Unlock",
@@ -71,7 +71,7 @@ static const struct ui_input_config input_pages[] = {
 	[UI_PAGE_FIDO_PIN_RECOVER] =
 		{
 			.title = "Recover FIDO PIN",
-			.hint = "Verify the OSKey wallet PIN",
+			.hint = "Verify the datamora wallet PIN",
 			.placeholder = "Wallet PIN",
 			.action = "Recover",
 			.action_detail = "Restore FIDO PIN attempts",
@@ -235,7 +235,7 @@ static void erase_storage(void)
 static void confirm_restart(lv_event_t *event)
 {
 	ARG_UNUSED(event);
-	ui_dialog_show(&oskey_refresh, "Restart OSKey?",
+	ui_dialog_show(&oskey_refresh, "Restart datamora?",
 		       "The device will disconnect briefly. Stored data will not change.",
 		       "Restart", UI_TONE_ACTIVE, restart_device);
 }
@@ -289,7 +289,7 @@ static void show_audio(void)
 	lv_obj_set_style_min_height(row, 44, 0);
 	lv_obj_set_style_bg_opa(row, LV_OPA_TRANSP, 0);
 	lv_obj_set_style_border_side(row, LV_BORDER_SIDE_BOTTOM, 0);
-	lv_obj_set_style_border_color(row, lv_color_hex(0x242b33), 0);
+	lv_obj_set_style_border_color(row, lv_color_hex(0x2a2e2a), 0);
 	lv_obj_set_style_border_width(row, 1, 0);
 	lv_obj_set_style_radius(row, 0, 0);
 	lv_obj_set_style_pad_hor(row, 4, 0);
@@ -303,7 +303,7 @@ static void show_audio(void)
 	lv_obj_clear_flag(row, LV_OBJ_FLAG_SCROLLABLE);
 
 	lv_obj_t *volume_label = lv_label_create(row);
-	lv_obj_set_style_text_color(volume_label, lv_color_hex(0xf2f5f7), 0);
+	lv_obj_set_style_text_color(volume_label, lv_color_hex(0xe8e8e5), 0);
 	lv_obj_set_style_text_font(volume_label, UI_FONT_BODY, 0);
 	lv_label_set_text_fmt(volume_label, "Volume %u%%", ui.status.audio.volume);
 
@@ -314,9 +314,9 @@ static void show_audio(void)
 	lv_obj_set_style_pad_hor(slider, LV_DPX(14), LV_PART_MAIN);
 	lv_slider_set_range(slider, 0, 100);
 	lv_slider_set_value(slider, ui.status.audio.volume, LV_ANIM_OFF);
-	lv_obj_set_style_bg_color(slider, lv_color_hex(0x242b33), LV_PART_MAIN);
-	lv_obj_set_style_bg_color(slider, lv_color_hex(0x4da3ff), LV_PART_INDICATOR);
-	lv_obj_set_style_bg_color(slider, lv_color_hex(0xf2f5f7), LV_PART_KNOB);
+	lv_obj_set_style_bg_color(slider, lv_color_hex(0x2a2e2a), LV_PART_MAIN);
+	lv_obj_set_style_bg_color(slider, lv_color_hex(0xcaf99c), LV_PART_INDICATOR);
+	lv_obj_set_style_bg_color(slider, lv_color_hex(0xe8e8e5), LV_PART_KNOB);
 	lv_obj_add_event_cb(slider, audio_volume_changed, LV_EVENT_VALUE_CHANGED, volume_label);
 #endif
 }
@@ -432,7 +432,7 @@ static void imu_box_draw(lv_event_t *event)
 	int32_t cy = (coords.y1 + coords.y2) / 2;
 
 	lv_draw_line_dsc_init(&line);
-	line.color = lv_color_hex(0xbfe0ff);
+	line.color = lv_color_hex(0xcaf99c);
 	line.width = 2;
 
 	lv_draw_triangle_dsc_t tri;
@@ -561,11 +561,11 @@ static void show_imu(void)
 	imu_box_obj = lv_obj_create(content);
 	lv_obj_set_width(imu_box_obj, LV_PCT(100));
 	lv_obj_set_height(imu_box_obj, 150);
-	lv_obj_set_style_bg_color(imu_box_obj, lv_color_hex(0x14181d), 0);
+	lv_obj_set_style_bg_color(imu_box_obj, lv_color_hex(0x16181a), 0);
 	lv_obj_set_style_bg_opa(imu_box_obj, LV_OPA_COVER, 0);
 	lv_obj_set_style_radius(imu_box_obj, 8, 0);
 	lv_obj_set_style_border_width(imu_box_obj, 1, 0);
-	lv_obj_set_style_border_color(imu_box_obj, lv_color_hex(0x242b33), 0);
+	lv_obj_set_style_border_color(imu_box_obj, lv_color_hex(0x2a2e2a), 0);
 	lv_obj_set_style_pad_all(imu_box_obj, 0, 0);
 	lv_obj_remove_flag(imu_box_obj, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_CLICK_FOCUSABLE |
 					 LV_OBJ_FLAG_SCROLLABLE);
@@ -601,10 +601,10 @@ static void show_splash(void)
 	ui_icon_color(ui_icon(content, &oskey_wallet_logo), ui_tone_color(UI_TONE_ACTIVE));
 	lv_obj_t *name = lv_label_create(content);
 	lv_obj_set_width(name, LV_PCT(100));
-	lv_obj_set_style_text_color(name, lv_color_hex(0xf2f5f7), 0);
+	lv_obj_set_style_text_color(name, lv_color_hex(0xe8e8e5), 0);
 	lv_obj_set_style_text_font(name, UI_FONT_LARGE, 0);
 	lv_obj_set_style_text_align(name, LV_TEXT_ALIGN_CENTER, 0);
-	lv_label_set_text(name, "OSKey");
+	lv_label_set_text(name, "datamora.");
 	lv_obj_add_flag(ui.status_bar, LV_OBJ_FLAG_HIDDEN);
 	lv_obj_set_size(content, LV_PCT(100), LV_PCT(100));
 	lv_obj_align(content, LV_ALIGN_CENTER, 0, 0);
@@ -623,7 +623,7 @@ static void show_capabilities(void)
 	};
 
 	ui_clear_sensitive();
-	lv_obj_t *content = ui_page_begin("OSKey capabilities", UI_NAVIGATION_NONE);
+	lv_obj_t *content = ui_page_begin("datamora. capabilities", UI_NAVIGATION_NONE);
 #if defined(CONFIG_OSKEY_NXP_SE)
 	ui_nxp_entry(content);
 #endif
@@ -635,14 +635,14 @@ static void show_capabilities(void)
 	}
 	if (ui.status.wallet != WalletState_Disabled) {
 		ui_section(content, "SETUP");
-		ui_list_row(content, &oskey_wallet, "Set up OSKey", "Create or restore a wallet",
+		ui_list_row(content, &oskey_wallet, "Set up datamora", "Create or restore a wallet",
 			    NULL, UI_TONE_ACTIVE, navigate, (void *)(uintptr_t)UI_PAGE_PIN_NEW);
 	}
 }
 
 static void show_home(void)
 {
-	lv_obj_t *content = ui_page_begin("OSKey", UI_NAVIGATION_NONE);
+	lv_obj_t *content = ui_page_begin("datamora.", UI_NAVIGATION_NONE);
 	ui_clear_sensitive();
 
 	ui_list_row(content, &oskey_wallet, "Hardware wallet", "USB, Bluetooth or UART", NULL,
@@ -842,10 +842,10 @@ static void show_mnemonic(void)
 		lv_obj_t *label = lv_label_create(words);
 		lv_obj_set_width(label, LV_PCT(48));
 		lv_obj_set_height(label, 30);
-		lv_obj_set_style_text_color(label, lv_color_hex(0xf2f5f7), 0);
+		lv_obj_set_style_text_color(label, lv_color_hex(0xe8e8e5), 0);
 		lv_obj_set_style_text_font(label, UI_FONT_BODY, 0);
 		lv_obj_set_style_border_side(label, LV_BORDER_SIDE_BOTTOM, 0);
-		lv_obj_set_style_border_color(label, lv_color_hex(0x242b33), 0);
+		lv_obj_set_style_border_color(label, lv_color_hex(0x2a2e2a), 0);
 		lv_obj_set_style_border_width(label, 1, 0);
 		lv_obj_set_style_pad_ver(label, 5, 0);
 		lv_label_set_text(label, row);
@@ -906,16 +906,16 @@ static void show_entropy(void)
 	lv_obj_set_style_bg_opa(table, LV_OPA_TRANSP, LV_PART_MAIN);
 	lv_obj_set_style_border_width(table, 0, LV_PART_MAIN);
 	lv_obj_set_style_bg_opa(table, LV_OPA_TRANSP, LV_PART_ITEMS);
-	lv_obj_set_style_border_color(table, lv_color_hex(0x303944), LV_PART_ITEMS);
-	lv_obj_set_style_text_color(table, lv_color_hex(0xb8c1ca), LV_PART_ITEMS);
+	lv_obj_set_style_border_color(table, lv_color_hex(0x2a2e2a), LV_PART_ITEMS);
+	lv_obj_set_style_text_color(table, lv_color_hex(0xa1a598), LV_PART_ITEMS);
 	lv_obj_set_style_text_font(table, UI_FONT_BODY, LV_PART_ITEMS);
 	lv_obj_set_style_text_align(table, LV_TEXT_ALIGN_CENTER, LV_PART_ITEMS);
 	lv_obj_set_style_pad_ver(table, 15, LV_PART_ITEMS);
 	lv_obj_set_style_pad_hor(table, 0, LV_PART_ITEMS);
 	lv_obj_set_style_bg_opa(table, LV_OPA_TRANSP, LV_PART_ITEMS | LV_STATE_PRESSED);
-	lv_obj_set_style_border_color(table, lv_color_hex(0x4da3ff),
+	lv_obj_set_style_border_color(table, lv_color_hex(0xcaf99c),
 				      LV_PART_ITEMS | LV_STATE_PRESSED);
-	lv_obj_set_style_text_color(table, lv_color_hex(0x4da3ff),
+	lv_obj_set_style_text_color(table, lv_color_hex(0xcaf99c),
 				    LV_PART_ITEMS | LV_STATE_PRESSED);
 	lv_table_set_row_count(table, DIV_ROUND_UP(ui.entropy_bits, columns));
 	lv_table_set_column_count(table, columns);

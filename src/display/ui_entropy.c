@@ -338,7 +338,7 @@ void ui_entropy_collect_render(void)
 		if (snapshot.current == APP_ENTROPY_SOURCE_TOUCH) {
 			lv_obj_t *pad = lv_obj_create(content);
 			lv_obj_set_size(pad, LV_PCT(100), 110);
-			lv_obj_set_style_bg_color(pad, lv_color_hex(0x14181d), 0);
+			lv_obj_set_style_bg_color(pad, lv_color_hex(0x16181a), 0);
 			lv_obj_set_style_border_color(pad, ui_tone_color(UI_TONE_ACTIVE), 0);
 			lv_obj_set_style_border_width(pad, 1, 0);
 			lv_obj_set_style_radius(pad, 8, 0);

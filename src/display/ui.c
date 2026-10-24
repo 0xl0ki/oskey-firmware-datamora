@@ -32,18 +32,18 @@ lv_color_t ui_tone_color(enum ui_tone tone)
 {
 	switch (tone) {
 	case UI_TONE_MUTED:
-		return lv_color_hex(0x697581);
+		return lv_color_hex(0xa1a598);
 	case UI_TONE_ACTIVE:
-		return lv_color_hex(0x4da3ff);
+		return lv_color_hex(0xcaf99c);
 	case UI_TONE_SUCCESS:
-		return lv_color_hex(0x6fd6a4);
+		return lv_color_hex(0xcaf99c);
 	case UI_TONE_WARNING:
 		return lv_color_hex(0xe9b65e);
 	case UI_TONE_DANGER:
 		return lv_color_hex(0xe36a78);
 	case UI_TONE_DEFAULT:
 	default:
-		return lv_color_hex(0xf2f5f7);
+		return lv_color_hex(0xe8e8e5);
 	}
 }
 
@@ -67,37 +67,37 @@ static void notice_clicked(lv_event_t *event)
 static void theme_init(void)
 {
 	lv_style_init(&styles.screen);
-	lv_style_set_bg_color(&styles.screen, lv_color_hex(0x090b0e));
+	lv_style_set_bg_color(&styles.screen, lv_color_hex(0x0a0a0a));
 	lv_style_set_bg_opa(&styles.screen, LV_OPA_COVER);
-	lv_style_set_text_color(&styles.screen, lv_color_hex(0xf2f5f7));
+	lv_style_set_text_color(&styles.screen, lv_color_hex(0xe8e8e5));
 	lv_style_set_text_font(&styles.screen, UI_FONT_BODY);
 	lv_style_set_border_width(&styles.screen, 0);
 	lv_style_set_pad_all(&styles.screen, 0);
 
 	lv_style_init(&styles.content);
 	lv_style_set_bg_opa(&styles.content, LV_OPA_TRANSP);
-	lv_style_set_text_color(&styles.content, lv_color_hex(0xf2f5f7));
+	lv_style_set_text_color(&styles.content, lv_color_hex(0xe8e8e5));
 	lv_style_set_text_font(&styles.content, UI_FONT_BODY);
 	lv_style_set_border_width(&styles.content, 0);
 	lv_style_set_radius(&styles.content, 0);
 	lv_style_set_pad_row(&styles.content, 8);
 
 	lv_style_init(&styles.title);
-	lv_style_set_text_color(&styles.title, lv_color_hex(0xf2f5f7));
+	lv_style_set_text_color(&styles.title, lv_color_hex(0xe8e8e5));
 	lv_style_set_text_font(&styles.title, UI_FONT_TITLE);
 	lv_style_set_pad_top(&styles.title, 2);
 	lv_style_set_pad_bottom(&styles.title, 4);
 
 	lv_style_init(&styles.text);
-	lv_style_set_text_color(&styles.text, lv_color_hex(0xf2f5f7));
+	lv_style_set_text_color(&styles.text, lv_color_hex(0xe8e8e5));
 	lv_style_set_text_font(&styles.text, UI_FONT_BODY);
 
 	lv_style_init(&styles.muted);
-	lv_style_set_text_color(&styles.muted, lv_color_hex(0x929eaa));
+	lv_style_set_text_color(&styles.muted, lv_color_hex(0xa1a598));
 	lv_style_set_text_font(&styles.muted, &lv_font_montserrat_12);
 
 	lv_style_init(&styles.section);
-	lv_style_set_text_color(&styles.section, lv_color_hex(0x929eaa));
+	lv_style_set_text_color(&styles.section, lv_color_hex(0xa1a598));
 	lv_style_set_text_font(&styles.section, UI_FONT_CAPTION);
 	lv_style_set_pad_top(&styles.section, 4);
 	lv_style_set_pad_bottom(&styles.section, 1);
@@ -105,7 +105,7 @@ static void theme_init(void)
 	lv_style_init(&styles.list);
 	lv_style_set_bg_opa(&styles.list, LV_OPA_TRANSP);
 	lv_style_set_border_side(&styles.list, LV_BORDER_SIDE_BOTTOM);
-	lv_style_set_border_color(&styles.list, lv_color_hex(0x242b33));
+	lv_style_set_border_color(&styles.list, lv_color_hex(0x2a2e2a));
 	lv_style_set_border_width(&styles.list, 1);
 	lv_style_set_radius(&styles.list, 0);
 	lv_style_set_pad_hor(&styles.list, 4);
@@ -145,7 +145,7 @@ void ui_init(const uint8_t features[APP_FEATURE_COUNT], const struct ui_status *
 			      LV_FLEX_ALIGN_START);
 	lv_obj_set_scrollbar_mode(ui.content, LV_SCROLLBAR_MODE_ACTIVE);
 	lv_obj_set_style_width(ui.content, 2, LV_PART_SCROLLBAR);
-	lv_obj_set_style_bg_color(ui.content, lv_color_hex(0x66727e), LV_PART_SCROLLBAR);
+	lv_obj_set_style_bg_color(ui.content, lv_color_hex(0x343831), LV_PART_SCROLLBAR);
 	lv_obj_set_style_bg_opa(ui.content, LV_OPA_50, LV_PART_SCROLLBAR);
 	lv_obj_set_style_radius(ui.content, 0, LV_PART_SCROLLBAR);
 	lv_obj_set_style_pad_hor(ui.content, ui.width >= 480 ? 40 : 12, 0);
@@ -154,7 +154,7 @@ void ui_init(const uint8_t features[APP_FEATURE_COUNT], const struct ui_status *
 	ui.notice = lv_obj_create(ui.screen);
 	lv_obj_set_width(ui.notice, LV_MIN(ui.width - 24, 456));
 	lv_obj_set_height(ui.notice, LV_SIZE_CONTENT);
-	lv_obj_set_style_bg_color(ui.notice, lv_color_hex(0x12181e), 0);
+	lv_obj_set_style_bg_color(ui.notice, lv_color_hex(0x16181a), 0);
 	lv_obj_set_style_bg_opa(ui.notice, LV_OPA_COVER, 0);
 	ui_press_feedback(ui.notice);
 	lv_obj_set_style_border_color(ui.notice, ui_tone_color(UI_TONE_DANGER), 0);
@@ -181,7 +181,7 @@ void ui_init(const uint8_t features[APP_FEATURE_COUNT], const struct ui_status *
 
 	ui.busy = lv_obj_create(ui.screen);
 	lv_obj_set_size(ui.busy, LV_PCT(100), LV_PCT(100));
-	lv_obj_set_style_bg_color(ui.busy, lv_color_hex(0x090b0e), 0);
+	lv_obj_set_style_bg_color(ui.busy, lv_color_hex(0x0a0a0a), 0);
 	lv_obj_set_style_bg_opa(ui.busy, LV_OPA_60, 0);
 	lv_obj_set_style_border_width(ui.busy, 0, 0);
 	lv_obj_set_style_radius(ui.busy, 0, 0);
@@ -197,7 +197,7 @@ void ui_init(const uint8_t features[APP_FEATURE_COUNT], const struct ui_status *
 	lv_obj_set_style_arc_width(spinner, 3, LV_PART_INDICATOR);
 	lv_obj_set_style_arc_rounded(spinner, true, LV_PART_MAIN);
 	lv_obj_set_style_arc_rounded(spinner, true, LV_PART_INDICATOR);
-	lv_obj_set_style_arc_color(spinner, lv_color_hex(0x29313a), LV_PART_MAIN);
+	lv_obj_set_style_arc_color(spinner, lv_color_hex(0x2a2e2a), LV_PART_MAIN);
 	lv_obj_set_style_arc_color(spinner, ui_tone_color(UI_TONE_ACTIVE), LV_PART_INDICATOR);
 	lv_obj_center(spinner);
 }
@@ -514,7 +514,7 @@ void ui_input_page(const struct ui_input_config *config, ui_input_submit_t submi
 		config->title, ui.page == UI_PAGE_LOCKED ? UI_NAVIGATION_NONE : UI_NAVIGATION_BACK);
 	lv_obj_t *description = lv_label_create(content);
 	lv_obj_set_width(description, LV_PCT(100));
-	lv_obj_set_style_text_color(description, lv_color_hex(0x929eaa), 0);
+	lv_obj_set_style_text_color(description, lv_color_hex(0xa1a598), 0);
 	lv_obj_set_style_text_font(description, UI_FONT_BODY, 0);
 	lv_label_set_long_mode(description, LV_LABEL_LONG_WRAP);
 	lv_label_set_text(description, config->hint);
@@ -533,9 +533,9 @@ void ui_input_page(const struct ui_input_config *config, ui_input_submit_t submi
 	lv_obj_t *field = lv_obj_create(form);
 	lv_obj_set_size(field, LV_PCT(100), config->password ? 40 : LV_MIN(88, ui.height / 4));
 	lv_obj_set_style_bg_opa(field, LV_OPA_TRANSP, 0);
-	lv_obj_set_style_border_color(field, lv_color_hex(0x484848), 0);
+	lv_obj_set_style_border_color(field, lv_color_hex(0x2a2e2a), 0);
 	lv_obj_set_style_border_width(field, 1, 0);
-	lv_obj_set_style_border_color(field, lv_color_hex(0x4da3ff), LV_STATE_FOCUSED);
+	lv_obj_set_style_border_color(field, lv_color_hex(0xcaf99c), LV_STATE_FOCUSED);
 	lv_obj_set_style_radius(field, 3, 0);
 	lv_obj_set_style_pad_all(field, 0, 0);
 	lv_obj_set_style_pad_column(field, 0, 0);
@@ -555,13 +555,13 @@ void ui_input_page(const struct ui_input_config *config, ui_input_submit_t submi
 	lv_textarea_set_max_length(ui.input, config->max_length);
 	lv_textarea_set_placeholder_text(ui.input, config->placeholder);
 	lv_obj_set_style_text_font(ui.input, UI_FONT_BODY, 0);
-	lv_obj_set_style_text_color(ui.input, lv_color_hex(0xf2f5f7), 0);
-	lv_obj_set_style_bg_color(ui.input, lv_color_hex(0x4da3ff),
+	lv_obj_set_style_text_color(ui.input, lv_color_hex(0xe8e8e5), 0);
+	lv_obj_set_style_bg_color(ui.input, lv_color_hex(0xcaf99c),
 				  LV_PART_CURSOR | LV_STATE_FOCUSED);
 	lv_obj_set_style_bg_opa(ui.input, LV_OPA_COVER, LV_PART_CURSOR | LV_STATE_FOCUSED);
-	lv_obj_set_style_text_color(ui.input, lv_color_hex(0xf2f5f7),
+	lv_obj_set_style_text_color(ui.input, lv_color_hex(0xe8e8e5),
 				    LV_PART_CURSOR | LV_STATE_FOCUSED);
-	lv_obj_set_style_text_color(ui.input, lv_color_hex(0x727e89), LV_PART_TEXTAREA_PLACEHOLDER);
+	lv_obj_set_style_text_color(ui.input, lv_color_hex(0x73786e), LV_PART_TEXTAREA_PLACEHOLDER);
 	lv_obj_set_style_text_font(ui.input, UI_FONT_BODY, LV_PART_TEXTAREA_PLACEHOLDER);
 	lv_obj_set_style_bg_opa(ui.input, LV_OPA_TRANSP, 0);
 	lv_obj_set_style_border_width(ui.input, 0, 0);
@@ -613,7 +613,7 @@ void ui_input_page(const struct ui_input_config *config, ui_input_submit_t submi
 	lv_obj_set_style_bg_opa(ui.keyboard, LV_OPA_COVER, LV_PART_ITEMS);
 	lv_obj_set_style_text_color(ui.keyboard, lv_palette_darken(LV_PALETTE_GREY, 4),
 				    LV_PART_ITEMS);
-	lv_obj_set_style_border_color(ui.keyboard, lv_color_hex(0x303944), LV_PART_ITEMS);
+	lv_obj_set_style_border_color(ui.keyboard, lv_color_hex(0x2a2e2a), LV_PART_ITEMS);
 	lv_obj_set_style_border_width(ui.keyboard, 1, LV_PART_ITEMS);
 	lv_obj_set_style_shadow_width(ui.keyboard, 0, LV_PART_ITEMS);
 	lv_obj_set_style_bg_color(ui.keyboard, lv_palette_lighten(LV_PALETTE_GREY, 2),

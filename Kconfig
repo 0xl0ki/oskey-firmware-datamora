@@ -389,7 +389,7 @@ config OSKEY_BLUETOOTH
 if OSKEY_BLUETOOTH
 
 config BT_DEVICE_NAME
-	default "OSKey"
+	default "datamora"
 
 config BT_L2CAP_TX_MTU
 	default 512
@@ -472,7 +472,7 @@ config NET_SOCKETS_SERVICE_STACK_SIZE
 	default 4096
 
 config NET_HOSTNAME
-	default "OSKey-"
+	default "datamora-"
 
 config NET_IF_MAX_IPV4_COUNT
 	default 2
@@ -506,7 +506,7 @@ config ESP32_WIFI_NET_ALLOC_SPIRAM
 
 config OSKEY_WIFI_AP_SSID
 	string "Wi-Fi provisioning AP SSID"
-	default "OSKey-AP"
+	default "datamora-AP"
 
 config OSKEY_WIFI_AP_PSK
 	string "Wi-Fi provisioning AP password"
@@ -555,13 +555,13 @@ endchoice
 
 config OSKEY_USBD_MANUFACTURER
 	string "USB device manufacturer string"
-	default "Butterfly"
+	default "datamora"
 	help
 	  USB device manufacturer string.
 
 config OSKEY_USBD_PRODUCT
 	string "USB device product string"
-	default "OSKey"
+	default "datamora key"
 	help
 	  USB device product string.
 

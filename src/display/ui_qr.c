@@ -187,7 +187,7 @@ void ui_qr_render(void)
 	preview_generation = 0;
 	status_label = lv_label_create(content);
 	lv_obj_set_width(status_label, LV_PCT(100));
-	lv_obj_set_style_bg_color(status_label, lv_color_hex(0x090b0e), 0);
+	lv_obj_set_style_bg_color(status_label, lv_color_hex(0x0a0a0a), 0);
 	lv_obj_set_style_bg_opa(status_label, LV_OPA_80, 0);
 	lv_obj_set_style_text_align(status_label, LV_TEXT_ALIGN_CENTER, 0);
 	lv_obj_set_style_pad_all(status_label, 6, 0);
@@ -197,7 +197,7 @@ void ui_qr_render(void)
 	result_label = lv_label_create(content);
 	lv_obj_set_width(result_label, LV_PCT(100));
 	lv_label_set_long_mode(result_label, LV_LABEL_LONG_WRAP);
-	lv_obj_set_style_bg_color(result_label, lv_color_hex(0x090b0e), 0);
+	lv_obj_set_style_bg_color(result_label, lv_color_hex(0x0a0a0a), 0);
 	lv_obj_set_style_bg_opa(result_label, LV_OPA_90, 0);
 	lv_obj_set_style_text_align(result_label, LV_TEXT_ALIGN_CENTER, 0);
 	lv_obj_set_style_pad_all(result_label, 10, 0);

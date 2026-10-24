@@ -56,7 +56,7 @@ static void field(lv_obj_t *parent, const char *name, const uint8_t *value, size
 	lv_obj_set_size(row, LV_PCT(100), LV_SIZE_CONTENT);
 	lv_obj_set_style_bg_opa(row, LV_OPA_TRANSP, 0);
 	lv_obj_set_style_border_side(row, LV_BORDER_SIDE_BOTTOM, 0);
-	lv_obj_set_style_border_color(row, lv_color_hex(0x242b33), 0);
+	lv_obj_set_style_border_color(row, lv_color_hex(0x2a2e2a), 0);
 	lv_obj_set_style_border_width(row, 1, 0);
 	lv_obj_set_style_radius(row, 0, 0);
 	lv_obj_set_style_pad_hor(row, 4, 0);
@@ -68,7 +68,7 @@ static void field(lv_obj_t *parent, const char *name, const uint8_t *value, size
 
 	lv_obj_t *name_label = lv_label_create(row);
 	lv_obj_set_style_text_font(name_label, UI_FONT_CAPTION, 0);
-	lv_obj_set_style_text_color(name_label, lv_color_hex(0x929eaa), 0);
+	lv_obj_set_style_text_color(name_label, lv_color_hex(0xa1a598), 0);
 	lv_label_set_text(name_label, name);
 
 	lv_obj_t *value_label = lv_label_create(row);

@@ -416,7 +416,7 @@ void ui_bluetooth_render(void)
 		    bluetooth_state_detail(state), NULL, bluetooth_tone(state), NULL, NULL);
 
 	ui_section(content, "SERVICE");
-	ui_list_row(content, &oskey_bluetooth, "OSKey Bluetooth",
+	ui_list_row(content, &oskey_bluetooth, "datamora Bluetooth",
 		    state == APP_BLUETOOTH_DISABLED
 			    ? "Wireless transport is unavailable"
 			    : "Encrypted wallet communication over Bluetooth",
